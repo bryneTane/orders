@@ -14,8 +14,8 @@ export const connection = createConnection({
   database: process.env.POSTGRES_DB, // our created database name, you can have your own
   entities: [
     // typeORM will not be able to create database table if we forget to put entity class name here..
-    Order, // our SuperHero entity class
-    Product, // our Power entity class
+    Order, // our Order entity class
+    Product, // our Product entity class
   ],
   synchronize: true,
   logging: false,
