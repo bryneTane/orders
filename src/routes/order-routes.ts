@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import OrderController from "../controllers/order-controller";
+
 class Routes {
   private controller: OrderController;
   constructor() {
@@ -15,8 +16,12 @@ class Routes {
     app
       .route("/orders")
       .get(this.controller.getAllOrders)
-      .post(this.controller.addOrder);
-    // following code is to handle http://localhost:3000/orders/{orderId} request.
+      // .post(this.controller.addOrder);
+
+    app
+    .route("/ticket")
+    .post(this.controller.addOrder)
+    // following code is to handle http://localhost:3004/orders/{orderId} request.
     app
       .route("/orders/:orderId")
       .get(this.controller.getOrderById)
